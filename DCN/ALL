@@ -1,0 +1,47 @@
+AWS --version
+aws configure
+Aws help
+sts get-caller-identity
+aws S3 ls
+aws s3 ls bucketName
+aws s3 mb s3://bucket-name
+aws iam list users
+aws iam list-policies
+aws s3:// 
+aws rb s3://
+
+Lamp
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-lamp-amazon-linux-2023.html
+https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2.html
+
+VPC
+https://jasonwatmore.com/post/2021/05/30/aws-create-a-vpc-with-public-and-private-subnets-and-a-nat-gateway
+
+
+1. syncs the bucket to the local current directory
+aws s3 sync . s3://bucket1
+Output:
+upload: test.txt to s3://bucket1/test.txt
+
+The above AWS sync command syncs objects of the bucket to files in a local directory by uploading the local files to s3.
+
+2. syncs bucket1 to bucket2. 
+
+aws s3 sync s3://mybucket s3://mybucket2
+Output:
+copy: s3://bucket1/test.txt to s3://bucket2/test.txt
+copy: s3://bucket1/welcome.txt to s3://bucket2/welcome.txt
+
+The above AWS sync command syncs objects from one bucket to another bucket by copying s3 objects. 
+3. syncs the current local directory to the bucket.
+aws s3 sync s3://mybucket .
+Output:
+download: s3://bucket1/test.txt to test.txt
+download: s3://bucket1/welcome.txt to welcome.txt
+
+
+dashboard
+https://mng.workshop.aws/operations-2022/detect/cwdashboard.html
+
+Health
+https://www.stormit.cloud/blog/route-53-health-check/
